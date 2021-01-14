@@ -1,0 +1,80 @@
+﻿<Window x:Name="frmMain" x:Class="Anamaria_Han_App_Examen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Anamaria_Han_App_Examen"
+        mc:Ignorable="d"
+        Title="Vegan Food Restaurant" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" WindowStyle="SingleBorderWindow" Cursor="Arrow" Loaded="frmMain_Loaded">
+
+    <Grid  MenuItem.Click="FoodItemsShow_Click">
+        <Rectangle x:Name="rglSale" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="265" Margin="535,0,0,0" Fill="#FF343030"/>
+        <Rectangle x:Name="rglMeniu" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="535" Fill="#FF79B343"/>
+        <Image x:Name="imgLogo" Margin="50,50,605,262" Source="/kisspng-organic-food-fusion-cuisine-logo-kashif-s-fusion-f-helal-5ad7b47c803cd6.5860390315240858845253.png"/>
+        <Label x:Name="lblTitle" Content="Vegan Food" HorizontalAlignment="Left" Margin="186,80,0,0" VerticalAlignment="Top" FontSize="45" FontWeight="Normal" FontFamily="Bauhaus 93" Foreground="#FF0B8343"/>
+        <GroupBox x:Name="gbDessert" Header="Dessert" Margin="30,178,532,24" FontSize="25" FontWeight="Normal" FontFamily="Bauhaus 93" Foreground="#FF343030">
+            <Canvas Margin="0,0,-2,0">
+                <Label x:Name="lblMuffinDessert" Content="Muffin" Canvas.Left="10" Canvas.Top="19" Foreground="#FF0B8343" FontSize="20"/>
+                <TextBox x:Name="txtMuffinDessert" Canvas.Left="120" Canvas.Top="27" Text="0" TextWrapping="Wrap" Width="80" FontSize="15" SelectionTextBrush="#FF343030" IsReadOnly="True" TextAlignment="Center" Foreground="#FF343030"/>
+                <Label x:Name="lblCookiesDessert" Content="Cookies" Canvas.Left="10" Canvas.Top="74" Foreground="#FF0B8343" FontSize="20"/>
+                <TextBox x:Name="txtCookiesDessert" Canvas.Left="120" Canvas.Top="76" Text="0" TextWrapping="Wrap" Width="80" FontSize="15" SelectionTextBrush="#FF343030" IsReadOnly="True" TextAlignment="Center" Foreground="#FF343030"/>
+                <Label x:Name="lblIceCreamDessert" Content="Ice Cream" Canvas.Left="10" Canvas.Top="122" Foreground="#FF0B8343" FontSize="20"/>
+                <TextBox x:Name="txtIceCreamDessert" Canvas.Left="120" Canvas.Top="130" Text="0" TextWrapping="Wrap" Width="80" FontSize="15" SelectionTextBrush="#FF343030" IsReadOnly="True" TextAlignment="Center" Foreground="#FF343030"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="gbDrink" Header="Drink" Margin="279,178,286,24" Foreground="#FF343030" FontSize="25" FontFamily="Bauhaus 93" FontWeight="Normal">
+            <Canvas>
+                <Label x:Name="lblJuiceDrink" Content="Juice" Canvas.Left="10" Canvas.Top="20" Foreground="#FF0B8343" FontSize="20"/>
+                <TextBox x:Name="txtJuiceDrink" Canvas.Left="120" Canvas.Top="28" Text="0" TextWrapping="Wrap" Width="80" FontSize="15" SelectionTextBrush="#FF343030" IsReadOnly="True" TextAlignment="Center" Foreground="#FF343030"/>
+                <Label x:Name="lblTeaDrink" Content="Tea" Canvas.Left="10" Canvas.Top="75" Foreground="#FF0B8343" FontSize="20"/>
+                <TextBox x:Name="txtTeaDrink" Canvas.Left="120" Canvas.Top="82" Text="0" TextWrapping="Wrap" Width="80" FontSize="15" SelectionTextBrush="#FF343030" IsReadOnly="True" TextAlignment="Center" Foreground="#FF343030"/>
+                <Label x:Name="lblCoffeeDrink" Content="Coffee" Canvas.Left="10" Canvas.Top="122" Foreground="#FF0B8343" FontSize="20"/>
+                <TextBox x:Name="txtCoffeeDrink" Canvas.Left="120" Canvas.Top="130" Text="0" TextWrapping="Wrap" Width="80" FontSize="15" SelectionTextBrush="#FF343030" IsReadOnly="True" TextAlignment="Center" Foreground="#FF343030"/>
+            </Canvas>
+
+        </GroupBox>
+        <GroupBox x:Name="gbSale" Header="Current Sale" Margin="554,23,10,10" Foreground="White" FontSize="25" FontFamily="Bauhaus 93" FontWeight="Normal" BorderBrush="{x:Null}">
+            <Canvas>
+                <Label x:Name="lblQuantity" Content="Quantity" Canvas.Left="10" Canvas.Top="10" Foreground="#FF79B343" FontSize="15"/>
+                <TextBox x:Name="txtQuantity" Canvas.Left="105" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="98" Height="24" FontSize="15" FontWeight="Normal" TextAlignment="Center" KeyUp="txtQuantity_KeyUp"/>
+                <Label x:Name="lblType" Content="Type" Canvas.Left="10" Canvas.Top="47" Foreground="#FF79B343" FontSize="15"/>
+                <ComboBox x:Name="cmbType" Canvas.Left="83" Canvas.Top="50" Width="120" Height="25" SelectionChanged="cmbType_SelectionChanged" FontSize="15" />
+                <Label x:Name="lblPrice" Content="Price" Canvas.Left="10" Canvas.Top="84" Foreground="#FF79B343" FontSize="15"/>
+                <TextBox x:Name="txtPrice" Canvas.Left="105" Canvas.Top="88" Text="0" TextWrapping="Wrap" Width="98" Height="24" FontSize="15" FontWeight="Normal" TextAlignment="Center" IsReadOnly="True"/>
+                <ListBox x:Name="lstSale" Height="88" Width="193" Canvas.Left="10" Canvas.Top="121" FontSize="15"/>
+                <Label x:Name="lblTotal" Content="Total" Canvas.Left="10" Canvas.Top="214" Foreground="#FF79B343" FontSize="15"/>
+                <TextBox x:Name="txtTotal" Canvas.Left="105" Canvas.Top="218" Text="0" TextWrapping="Wrap" Width="98" Height="24" FontSize="15" FontWeight="Normal" TextAlignment="Center" IsReadOnly="True"/>
+                <Button x:Name="btnAddToSale" Content="Add To Sale" Canvas.Left="10" Canvas.Top="251" FontSize="15" Foreground="#FF0B8343" BorderBrush="White" Background="White" Click="btnAdd_Click"/>
+                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="114" Canvas.Top="251" FontSize="15" Foreground="#FF0B8343" BorderBrush="White" Background="White" Click=" btnRemoveItem_Click"/>
+                <Button x:Name="btnCheckOut" Content="Check Out" Canvas.Left="31" Canvas.Top="294" FontSize="25" Foreground="White" BorderBrush="{x:Null}" Background="#FF0B8343" Width="148" Click=" btnCheckOut_Click"/>
+
+            </Canvas>
+
+        </GroupBox>
+        <Image x:Name="imgVegan" HorizontalAlignment="Left" Height="34" Margin="738,6,0,0" VerticalAlignment="Top" Width="40" Source="/kisspng-vegetarian-cuisine-panji-sweets-savories-vegetar-veg-burger-5b5e7dae9cd157.1430435615329192146423.png"/>
+        <Image x:Name="imgApple" HorizontalAlignment="Left" Height="38" Margin="263,99,0,0" VerticalAlignment="Top" Width="34" Source="/kisspng-apple-clip-art-food-pictures-fruits-pictures-green-apple-5aa48275bb0b82.7820966515207307417661.png" />
+        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top"
+Width="130" Margin="19,8,0,0" Background="#FF77B141" BorderBrush="White" FontSize="15">
+            <MenuItem Header="File" Foreground="White" FontWeight="Normal">
+                <MenuItem Header="Exit" Foreground="White" Background="#FF79B343" BorderBrush="#FF79B343" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Vegan Food" Foreground="White">
+                <MenuItem Header="Make" Background="#FF79B343" Foreground="White" BorderBrush="#FF79B343">
+                    <MenuItem Header="Dessert" Background="#FF79B343" Foreground="White" >
+                        <MenuItem x:Name="muffinMenuItem" Header="Muffin" Background="#FF79B343" Foreground="White" Click="muffinMenuItem_Click"/>
+                        <MenuItem x:Name="cookiesMenuItem" Header="Cookies" Background="#FF79B343" Foreground="White" Click="cookiesMenuItem_Click"/>
+                        <MenuItem x:Name="icecreamMenuItem" Header="Ice Cream" Background="#FF79B343" Foreground="White" Click="icecreamMenuItem_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Drink" Background="#FF79B343" Foreground="White" >
+                        <MenuItem x:Name="juiceMenuItem" Header="Juice" Background="#FF79B343" Foreground="White" Click="juiceMenuItem_Click"/>
+                        <MenuItem x:Name="teaMenuItem" Header="Tea" Background="#FF79B343" Foreground="White" Click="teaMenuItem_Click"/>
+                        <MenuItem x:Name="coffeeMenuItem" Header="Coffee" Background="#FF79B343" Foreground="White" Click="coffeeMenuItem_Click"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Stop" Background="#FF79B343" Foreground="White" BorderBrush="#FF79B343"/>
+            </MenuItem>
+
+        </Menu>
+    </Grid>
+</Window>
+

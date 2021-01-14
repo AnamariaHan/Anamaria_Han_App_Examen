@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="kisspng-apple-clip-art-food-pictures-fruits-pictures-green-apple-5aa48275bb0b82.7820966515207307417661.png" />
+    <None Remove="kisspng-organic-food-fusion-cuisine-logo-kashif-s-fusion-f-helal-5ad7b47c803cd6.5860390315240858845253.png" />
+    <None Remove="kisspng-vegetarian-cuisine-panji-sweets-savories-vegetar-veg-burger-5b5e7dae9cd157.1430435615329192146423.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="kisspng-apple-clip-art-food-pictures-fruits-pictures-green-apple-5aa48275bb0b82.7820966515207307417661.png" />
+    <Resource Include="kisspng-organic-food-fusion-cuisine-logo-kashif-s-fusion-f-helal-5ad7b47c803cd6.5860390315240858845253.png" />
+    <Resource Include="kisspng-vegetarian-cuisine-panji-sweets-savories-vegetar-veg-burger-5b5e7dae9cd157.1430435615329192146423.png" />
+  </ItemGroup>
+
+</Project>
